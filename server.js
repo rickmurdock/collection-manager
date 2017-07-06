@@ -26,6 +26,17 @@ app.get("/cars", (req, res) => {
   });
 });
 
+app.get("/cars/:id", (req, res) => {
+  Car.findById(req.params.id)
+    .then(foundCar=>{
+      console.log("Model", foundCar.model);
+      res.send(foundCar);
+    })
+    .catch(err => {
+      res.status(500).send(err);
+    });
+});
+
 app.post("/cars", (req, res) => {
   let carData = req.body;
   let newCar = new Car(carData);
@@ -40,6 +51,15 @@ app.post("/cars", (req, res) => {
     });
 });
 
+app.delete("/cars/:id", (req, res) => {
+  Car.deleteOne({ _id: req.params.id }) 
+  .then(() => {
+    res.send("Deleted record");
+    })
+    .catch(err => {
+      res.status(500).send(err);
+    });
+});
 
 app.listen(port, () => {
   console.log(`Server is running on ${port}!`);
