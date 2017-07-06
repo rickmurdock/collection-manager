@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/addCar">Add Car to Inventory</a></li>
+      </ul>
+    </nav>
+    <h1>Classic Car Inventory</h1>
+    {{#autos}}
+      {{vinNumber}} {{year}} {{make}} {{model}} {{body.color}}
+      <br>
+    {{/autos}}
+  </body>
+</html>
