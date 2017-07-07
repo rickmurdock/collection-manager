@@ -4,9 +4,7 @@ const Car = require("../models/Car");
 
 updateCarRouter.get("/:id", (req, res) => {
   Car.findById(req.params.id)
-    .then(foundCar=>{
-      console.log("Model", foundCar.model);
-      // res.send(foundCar);
+    .then(foundCar => {
       res.render("updateCar", { auto: foundCar});
     })
     .catch(err => {
@@ -16,8 +14,8 @@ updateCarRouter.get("/:id", (req, res) => {
 
 updateCarRouter.post("/:id", (req, res) => {
   Car.updateOne({_id: req.params.id}, req.body)
-  .then(updatedCar=> {
-    res.redirect("/");
+    .then(updatedCar=> {
+      res.redirect("/");
     })
     .catch(err => {
       res.status(500).send(err);

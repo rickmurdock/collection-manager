@@ -6,12 +6,12 @@ var carSchema = new Schema({
     type: String,
     default: "unknown"
   },
-  make: {  // Chevrolet
+  make: {
     type: String,
     required: true,
     default: "unknown"
   }, 
-  model: {  // Nova
+  model: {
     type: String,
     required: true,
     default: "unknown"

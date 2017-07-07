@@ -8,9 +8,7 @@ addCarRouter.get("/", (req, res) => {
 
 addCarRouter.post("/", (req, res) => {
   let carData = req.body;
-  console.log('CAR DATA ====', carData);
   let newCar = new Car(carData);
-  console.log("newCar: ", newCar);
   newCar
     .save()
     .then(savedCar => {
