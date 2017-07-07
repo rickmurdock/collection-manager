@@ -24,7 +24,7 @@
       <br><br>
       <label for="body.bodyStyle">Body Style</label>
       <select name="body.bodyStyle">
-        <option value="" selected></option>
+        <option value="{{body.bodyStyle}}" selected>{{body.bodyStyle}}</option>
         <option value="sedan">sedan</option>
         <option value="coupe">coupe</option>
         <option value="convertible">convertible</option>
@@ -41,14 +41,14 @@
       <br><br>
       <label for="driveTrain.transmission">Transmission Type</label>
       <select name="driveTrain.transmission">
-        <option value="" selected></option>
+        <option value="{{driveTrain.transmission}}" selected>{{driveTrain.transmission}}</option>
         <option value="automatic">automatic</option>
         <option value="manual">manual</option>
       </select>
       <br><br>
       <label for="driveTrain.wheelDrive">Drive Type</label>
       <select name="driveTrain.wheelDrive">
-        <option value="" selected></option>
+        <option value="{{driveTrain.wheelDrive}}" selected>{{driveTrain.wheelDrive}}</option>
         <option value="2WD">2WD</option>
         <option value="4WD">4WD</option>
         <option value="AWD">AWD</option>

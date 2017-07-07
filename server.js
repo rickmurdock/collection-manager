@@ -80,7 +80,7 @@ app.post("/updateCar/:id", (req, res) => {
     });
 });
 
-app.delete("/deleteCar/:id", (req, res) => {
+app.get("/deleteCar/:id", (req, res) => {
   Car.deleteOne({ _id: req.params.id }) 
   .then(() => {
     // res.send("Deleted record");
