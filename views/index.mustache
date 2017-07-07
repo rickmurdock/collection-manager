@@ -12,10 +12,29 @@
         <li><a href="/addCar">Add Car to Inventory</a></li>
       </ul>
     </nav>
-    <h1>Classic Car Inventory</h1>
+    <h1>Clunker's Classic Car Collection</h1>
+    <table border="1">
+        <tr>
+          <th>VIN NUMBER</th>
+          <th>YEAR</th>
+          <th>MAKE</th>
+          <th>MODEL</th>
+          <th>COLOR</th>
+          <th></th>
+          <th></th>
+        </tr>
     {{#autos}}
-      {{vinNumber}} {{year}} {{make}} {{model}} {{body.color}}
+        <tr>
+          <td>{{vinNumber}}</td>
+          <td>{{year}}</td>
+          <td>{{make}}</td>
+          <td>{{model}}</td>
+          <td>{{body.color}}</td>
+          <td><a href="/updateCar/{{_id}}">edit</a></td>
+          <td><a href="/deleteCar/{{_id}}">delete</a></td>
+        </tr>
       <br>
     {{/autos}}
+    </table>
   </body>
 </html>

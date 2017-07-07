@@ -8,18 +8,19 @@
   </head>
   <body>
     <h1>Add Another Classic to Our Collection</h1>
-    <form action="/addCar" method="post">
+    {{#auto}}
+    <form action="/updateCar/{{_id}}" method="post">
     <label for="year">Year</label>
-      <input type="text" name="year">
+      <input type="text" name="year" value="{{year}}">
       <br><br>
       <label for="make">Make</label>
-      <input type="text" name="make">
+      <input type="text" name="make" value="{{make}}">
       <br><br>
       <label for="model">Model</label>
-      <input type="text" name="model">
+      <input type="text" name="model" value="{{model}}">
       <br><br>
       <label for="vinNumber">VIN Number</label>
-      <input type="text" name="vinNumber">
+      <input type="text" name="vinNumber" value="{{vinNumber}}">
       <br><br>
       <label for="body.bodyStyle">Body Style</label>
       <select name="body.bodyStyle">
@@ -33,10 +34,10 @@
       </select>
       <br><br>
       <label for="body.color">Color</label>
-      <input type="text" name="body.color">
+      <input type="text" name="body.color" value="{{body.color}}">
       <br><br>
       <label for="driveTrain.engine">Engine</label>
-      <input type="text" name="driveTrain.engine">
+      <input type="text" name="driveTrain.engine" value="{{driveTrain.engine}}">
       <br><br>
       <label for="driveTrain.transmission">Transmission Type</label>
       <select name="driveTrain.transmission">
@@ -53,8 +54,8 @@
         <option value="AWD">AWD</option>
       </select>
       <br><br>
-      <input type="submit" value="Add to Inventory">
-      
+      <input type="submit" value="Update">
     </form>
+    {{/auto}}
   </body>
 </html>

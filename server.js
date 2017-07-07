@@ -42,11 +42,13 @@ app.get("/addCar", (req, res) => {
   res.render('addCar');
 });
 
-app.get("/cars/:id", (req, res) => {
+// app.get("/cars/:id", (req, res) => {
+app.get("/updateCar/:id", (req, res) => {
   Car.findById(req.params.id)
     .then(foundCar=>{
       console.log("Model", foundCar.model);
-      res.send(foundCar);
+      // res.send(foundCar);
+      res.render("updateCar", { auto: foundCar});
     })
     .catch(err => {
       res.status(500).send(err);
@@ -61,7 +63,6 @@ app.post("/addCar", (req, res) => {
   newCar
     .save()
     .then(savedCar => {
-      // res.send(savedCar);
       res.redirect("/");
     })
     .catch(err => {
@@ -69,20 +70,21 @@ app.post("/addCar", (req, res) => {
     });
 });
 
-app.put("/cars/:id", (req, res) => {
+app.post("/updateCar/:id", (req, res) => {
   Car.updateOne({_id: req.params.id}, req.body)
   .then(updatedCar=> {
-    res.send(updatedCar);
+    res.redirect("/");
     })
     .catch(err => {
       res.status(500).send(err);
     });
 });
 
-app.delete("/cars/:id", (req, res) => {
+app.delete("/deleteCar/:id", (req, res) => {
   Car.deleteOne({ _id: req.params.id }) 
   .then(() => {
-    res.send("Deleted record");
+    // res.send("Deleted record");
+    res.redirect("/");
     })
     .catch(err => {
       res.status(500).send(err);
