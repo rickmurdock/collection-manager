@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 mongoose.Promise = require("bluebird");
 const Car = require("./models/Car");
 const addCarRouter = require('./routes/addCarRoutes');
+const deleteCarRouter = require('./routes/deleteCarRoutes');
+const updateCarRouter = require('./routes/updateCarRoutes');
 const app = express();
 const port = process.env.port || 8005;
 const dbURL = "mongodb://localhost:27017/classiCars";
@@ -28,6 +30,8 @@ mongoose.connect(dbURL).then(function(err, db) {
 
 // ROUTES
 app.use('/addCar', addCarRouter);
+app.use('/updateCar', updateCarRouter);
+app.use('/deleteCar', deleteCarRouter);
 
 app.get("/", (req, res) => {
   Car.find()
@@ -39,40 +43,6 @@ app.get("/", (req, res) => {
   .catch(err => {
     res.status(500).send(err);
   });
-});
-
-// app.get("/cars/:id", (req, res) => {
-app.get("/updateCar/:id", (req, res) => {
-  Car.findById(req.params.id)
-    .then(foundCar=>{
-      console.log("Model", foundCar.model);
-      // res.send(foundCar);
-      res.render("updateCar", { auto: foundCar});
-    })
-    .catch(err => {
-      res.status(500).send(err);
-    });
-});
-
-app.post("/updateCar/:id", (req, res) => {
-  Car.updateOne({_id: req.params.id}, req.body)
-  .then(updatedCar=> {
-    res.redirect("/");
-    })
-    .catch(err => {
-      res.status(500).send(err);
-    });
-});
-
-app.get("/deleteCar/:id", (req, res) => {
-  Car.deleteOne({ _id: req.params.id }) 
-  .then(() => {
-    // res.send("Deleted record");
-    res.redirect("/");
-    })
-    .catch(err => {
-      res.status(500).send(err);
-    });
 });
 
 app.listen(port, () => {
