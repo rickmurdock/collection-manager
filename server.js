@@ -4,6 +4,7 @@ const mustacheExpress = require('mustache-express');
 const mongoose = require("mongoose");
 mongoose.Promise = require("bluebird");
 const Car = require("./models/Car");
+const addCarRouter = require('./routes/addCarRoutes');
 const app = express();
 const port = process.env.port || 8005;
 const dbURL = "mongodb://localhost:27017/classiCars";
@@ -25,6 +26,9 @@ mongoose.connect(dbURL).then(function(err, db) {
   console.log("connected to classicCar DB.");
 });
 
+// ROUTES
+app.use('/addCar', addCarRouter);
+
 app.get("/", (req, res) => {
   Car.find()
   .then(foundCars=>{
@@ -37,11 +41,6 @@ app.get("/", (req, res) => {
   });
 });
 
-
-app.get("/addCar", (req, res) => {
-  res.render('addCar');
-});
-
 // app.get("/cars/:id", (req, res) => {
 app.get("/updateCar/:id", (req, res) => {
   Car.findById(req.params.id)
@@ -49,21 +48,6 @@ app.get("/updateCar/:id", (req, res) => {
       console.log("Model", foundCar.model);
       // res.send(foundCar);
       res.render("updateCar", { auto: foundCar});
-    })
-    .catch(err => {
-      res.status(500).send(err);
-    });
-});
-
-app.post("/addCar", (req, res) => {
-  let carData = req.body;
-  console.log('CAR DATA ====', carData);
-  let newCar = new Car(carData);
-  console.log("newCar: ", newCar);
-  newCar
-    .save()
-    .then(savedCar => {
-      res.redirect("/");
     })
     .catch(err => {
       res.status(500).send(err);
