@@ -4,57 +4,94 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
     <link href="/style.css" rel="stylesheet">
   </head>
   <body>
-    <h1>Add Another Classic to Our Collection</h1>
+    <div id="background"></div>
+    <h1>Clunker's Classic Car Collection</h1>
+    <h2>Add to collection</h2>
+    <div id="update">
     <form action="/addCar" method="post">
-    <label for="year">Year</label>
-      <input type="text" name="year">
-      <br><br>
-      <label for="make">Make</label>
-      <input type="text" name="make">
-      <br><br>
-      <label for="model">Model</label>
-      <input type="text" name="model">
-      <br><br>
-      <label for="vinNumber">VIN Number</label>
-      <input type="text" name="vinNumber">
-      <br><br>
-      <label for="body.bodyStyle">Body Style</label>
-      <select name="body.bodyStyle">
-        <option value="" selected></option>
-        <option value="sedan">sedan</option>
-        <option value="coupe">coupe</option>
-        <option value="convertible">convertible</option>
-        <option value="wagon">wagon</option>
-        <option value="truck">truck</option>
-        <option value="coupe">van</option>
-      </select>
-      <br><br>
-      <label for="body.color">Color</label>
-      <input type="text" name="body.color">
-      <br><br>
-      <label for="driveTrain.engine">Engine</label>
-      <input type="text" name="driveTrain.engine">
-      <br><br>
-      <label for="driveTrain.transmission">Transmission Type</label>
-      <select name="driveTrain.transmission">
-        <option value="" selected></option>
-        <option value="automatic">automatic</option>
-        <option value="manual">manual</option>
-      </select>
-      <br><br>
-      <label for="driveTrain.wheelDrive">Drive Type</label>
-      <select name="driveTrain.wheelDrive">
-        <option value="" selected></option>
-        <option value="2WD">2WD</option>
-        <option value="4WD">4WD</option>
-        <option value="AWD">AWD</option>
-      </select>
-      <br><br>
-      <input type="submit" value="Add to Inventory">
+
+    <table id="add-table">
+      <tr>
+        <td>
+          <label for="year">Year</label><br>
+          <input type="text" name="year" id="year" autofocus>
+        </td>
+        <td>
+          <label for="make">Make</label><br>
+          <input type="text" name="make" id="make" required>
+        </td>
+        <td>
+          <label for="model">Model</label><br>
+          <input type="text" name="model" id="model" required>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="vinNumber">VIN Number</label><br>
+          <input type="text" name="vinNumber" id="vinNumber">
+        </td>
+        <td>
+          <label for="body.color">Color</label><br>
+          <input type="text" name="body.color" id="body.color">
+        </td>
+        <td>
+          <label for="body.bodyStyle">Body Style</label><br>
+          <select name="body.bodyStyle" id="body.bodyStyle">
+            <option value="" selected></option>
+            <option value="sedan">sedan</option>
+            <option value="coupe">coupe</option>
+            <option value="convertible">convertible</option>
+            <option value="wagon">wagon</option>
+            <option value="truck">truck</option>
+            <option value="coupe">van</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="driveTrain.engine">Engine</label><br>
+          <input type="text" name="driveTrain.engine" id="driveTrain.engine">
+        </td>
+        <td>
+          <label for="driveTrain.transmission">Transmission Type</label><br>
+          <select name="driveTrain.transmission">
+            <option value="" selected></option>
+            <option value="automatic">automatic</option>
+            <option value="manual">manual</option>
+          </select>
+        </td>
+        <td>
+          <label for="driveTrain.wheelDrive">Drive Type</label><br>
+          <select name="driveTrain.wheelDrive">
+            <option value="" selected></option>
+            <option value="2WD">2WD</option>
+            <option value="4WD">4WD</option>
+            <option value="AWD">AWD</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <br>
+          <input type="submit" value="Add">
+          </form>
+        </td>
+        <td>
+          <br>
+          <form action="/" method="get">
+              <input type="submit" value="Cancel">
+          </form>
+        </td>
+      </tr>
+    </table>
+
+      <!--<input type="submit" value="Add to Inventory">-->
       
-    </form>
+    <!--</form>-->
+    </div>
   </body>
 </html>

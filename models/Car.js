@@ -25,6 +25,7 @@ var carSchema = new Schema({
     bodyStyle: {
       type: String,
       enum: [
+        "",
         "sedan", 
         "coupe", 
         "convertible", 
@@ -39,11 +40,20 @@ var carSchema = new Schema({
     engine:  String,
     transmission: {
       type: String,
-      enum: ["automatic", "manual"]
+      enum: [
+        "", 
+        "automatic", 
+        "manual"
+      ]
     },
     wheelDrive: {
       type: String,
-      enum: ["2WD", "4WD", "AWD"]
+      enum: [
+        "", 
+        "2WD", 
+        "4WD", 
+        "AWD"
+      ]
     }
   }
 });

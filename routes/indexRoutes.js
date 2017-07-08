@@ -5,6 +5,7 @@ const Car = require("../models/Car");
 indexRouter.get("/", (req, res) => {
   Car.find()
   .then(foundCars => {
+    // res.send(foundCars);
     res.render("index", { autos: foundCars});
   })
   .catch(err => {

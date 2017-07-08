@@ -4,37 +4,43 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
     <link href="/style.css" rel="stylesheet">
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="/addCar">Add Car to Inventory</a></li>
-      </ul>
-    </nav>
+    <div id="background"></div>
+      <div id="wrapper">
     <h1>Clunker's Classic Car Collection</h1>
-    <table border="1">
+    <table>
         <tr>
-          <th>VIN NUMBER</th>
           <th>YEAR</th>
           <th>MAKE</th>
           <th>MODEL</th>
           <th>COLOR</th>
-          <th></th>
-          <th></th>
+          <th>BODY STYLE</th>
+          <th>ENGINE</th>
+          <th>TRANSMISSION</th>
+          <th>DRIVE TRAIN</th>
+          <th>VIN NUMBER</th>
+          <th colspan="2"><a href="/addCar">Add Car to Inventory</a></th>
         </tr>
     {{#autos}}
         <tr>
-          <td>{{vinNumber}}</td>
           <td>{{year}}</td>
           <td>{{make}}</td>
           <td>{{model}}</td>
           <td>{{body.color}}</td>
+          <td>{{body.bodyStyle}}</td>
+          <td>{{driveTrain.engine}}</td>
+          <td>{{driveTrain.transmission}}</td>
+          <td>{{driveTrain.wheelDrive}}</td>
+          <td>{{vinNumber}}</td>
           <td><a href="/updateCar/{{_id}}">edit</a></td>
           <td><a href="/deleteCar/{{_id}}">delete</a></td>
         </tr>
-      <br>
     {{/autos}}
     </table>
+      
+    </div>
   </body>
 </html>
