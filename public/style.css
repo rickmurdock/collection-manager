@@ -103,11 +103,13 @@ select {
   padding: 20px;
 }
 
-#add-table {
+#add-table,
+#update-table {
   border: none;
 }
 
-#add-table td {
+#add-table td,
+#update-table td {
   border: none;
 }
 
