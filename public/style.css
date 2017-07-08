@@ -13,39 +13,14 @@
   background: transparent;
 }
 
-
-
-body {
-  /*background-image: url("nova.jpg");*/
-  /*width: 100%;*/
-
-    /*background-position: center;*/
-
-    /*background-position: 0 20%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-    opacity: 0.4;
-    filter: alpha(opacity=50);  For IE8 and earlier */
-
-}
-
-/*#background {
-  background-image: url("nova.jpg");
-  opacity: 0.4;
-}*/
-
-
 #wrapper {
- 
   height: 900px;
   z-index: 3;
 }
 
 h1 {
   font-family: 'Luckiest Guy', cursive;
- text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 5px 5px 5px #aaa;
-  /*text-shadow: 4px 4px 4px #aaa;*/
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 5px 5px 5px #aaa;
   color: brown;
   margin-top: 20px;
   padding: 20px;
@@ -66,6 +41,14 @@ table, th, td {
   margin-left: auto;
   margin-right: auto;
   z-index: 5;
+  font-family: 'Roboto', sans-serif;
+}
+
+#collection tr:nth-child(even) {
+  background: lightgray;
+}
+#collection tr:nth-child(odd) {
+  background: white;
 }
 
 th, td {
@@ -90,17 +73,20 @@ th, td {
 input[type="text"],
 select {
   border: 1px solid black;
-  height: 30px;
   border-radius: 5px;
+  height: 30px;
   padding-left: 10px;
+  background-color: white;
 }
 
 #update {
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+  border: 2px solid brown;
+  border-radius: 5px;
   width: 45%;
   padding: 20px;
+  background-color: lightgray;
 }
 
 #add-table,
@@ -108,17 +94,24 @@ select {
   border: none;
 }
 
+#collection th,
+#collection td,
 #add-table td,
 #update-table td {
   border: none;
 }
 
+#collection {
+  border: 2px solid brown;
+  border-collapse: collapse;
+  border-radius: 15px;
+}
+
 input[type="submit"],
 input[type="button"] {
   border: 1px solid black;
-  height: 30px;
   border-radius: 5px;
-  /*padding-left: 5px;*/
+  height: 30px;
   color: white;
   background-color: brown;
   width: 100px;

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title></title>
+    <title>Add a Car</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="/style.css" rel="stylesheet">
   </head>
   <body>
@@ -12,82 +13,81 @@
     <h1>Clunker's Classic Cars</h1>
     <h2>Add a Car</h2>
     <div id="update">
-    <form action="/addCar" method="post">
-
-    <table id="add-table">
-      <tr>
-        <td>
-          <label for="year">Year</label><br>
-          <input type="text" name="year" id="year" autofocus>
-        </td>
-        <td>
-          <label for="make">Make</label><br>
-          <input type="text" name="make" id="make" required>
-        </td>
-        <td>
-          <label for="model">Model</label><br>
-          <input type="text" name="model" id="model" required>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="vinNumber">VIN Number</label><br>
-          <input type="text" name="vinNumber" id="vinNumber">
-        </td>
-        <td>
-          <label for="body.color">Color</label><br>
-          <input type="text" name="body.color" id="body.color">
-        </td>
-        <td>
-          <label for="body.bodyStyle">Body Style</label><br>
-          <select name="body.bodyStyle" id="body.bodyStyle">
-            <option value="" selected></option>
-            <option value="sedan">sedan</option>
-            <option value="coupe">coupe</option>
-            <option value="convertible">convertible</option>
-            <option value="wagon">wagon</option>
-            <option value="truck">truck</option>
-            <option value="coupe">van</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="driveTrain.engine">Engine</label><br>
-          <input type="text" name="driveTrain.engine" id="driveTrain.engine">
-        </td>
-        <td>
-          <label for="driveTrain.transmission">Transmission</label><br>
-          <select name="driveTrain.transmission" id="body.transmission">
-            <option value="" selected></option>
-            <option value="automatic">automatic</option>
-            <option value="manual">manual</option>
-          </select>
-        </td>
-        <td>
-          <label for="driveTrain.wheelDrive">Drive Type</label><br>
-          <select name="driveTrain.wheelDrive" id="body.wheelDrive">
-            <option value="" selected></option>
-            <option value="2WD">2WD</option>
-            <option value="4WD">4WD</option>
-            <option value="AWD">AWD</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <br>
-          <input type="submit" value="Add">
-          </form>
-        </td>
-        <td>
-          <br>
-          <form action="/" method="get">
+      <table id="add-table">
+        <form action="/addCar" method="post">
+          <tr>
+            <td>
+              <label for="year">Year</label><br>
+              <input type="text" name="year" id="year" autofocus>
+            </td>
+            <td>
+              <label for="make">Make</label><br>
+              <input type="text" name="make" id="make" required>
+            </td>
+            <td>
+              <label for="model">Model</label><br>
+              <input type="text" name="model" id="model" required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="vinNumber">VIN Number</label><br>
+              <input type="text" name="vinNumber" id="vinNumber">
+            </td>
+            <td>
+              <label for="body.color">Color</label><br>
+              <input type="text" name="body.color" id="body.color">
+            </td>
+            <td>
+              <label for="body.bodyStyle">Body Style</label><br>
+              <select name="body.bodyStyle" id="body.bodyStyle">
+                <option value="" selected></option>
+                <option value="sedan">sedan</option>
+                <option value="coupe">coupe</option>
+                <option value="convertible">convertible</option>
+                <option value="wagon">wagon</option>
+                <option value="truck">truck</option>
+                <option value="coupe">van</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="driveTrain.engine">Engine</label><br>
+              <input type="text" name="driveTrain.engine" id="driveTrain.engine">
+            </td>
+            <td>
+              <label for="driveTrain.transmission">Transmission</label><br>
+              <select name="driveTrain.transmission" id="body.transmission">
+                <option value="" selected></option>
+                <option value="automatic">automatic</option>
+                <option value="manual">manual</option>
+              </select>
+            </td>
+            <td>
+              <label for="driveTrain.wheelDrive">Drivetrain</label><br>
+              <select name="driveTrain.wheelDrive" id="body.wheelDrive">
+                <option value="" selected></option>
+                <option value="2WD">2WD</option>
+                <option value="4WD">4WD</option>
+                <option value="AWD">AWD</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <br>
+              <input type="submit" value="Add"> 
+            </td>
+        </form>
+        <form action="/" method="get">
+            <td>
+              <br>      
               <input type="submit" value="Cancel">
-          </form>
-        </td>
-      </tr>
-    </table>
+            </td>
+          </tr>
+        </form>
+      </table>
     </div>
   </body>
 </html>

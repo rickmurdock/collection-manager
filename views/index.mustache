@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title></title>
+    <title>Our Collection</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
@@ -9,10 +9,10 @@
   </head>
   <body>
     <div id="background"></div>
-      <div id="wrapper">
-    <h1>Clunker's Classic Cars</h1>
-    <h2>Our Collection</h2>
-    <table>
+    <div id="wrapper">
+      <h1>Clunker's Classic Cars</h1>
+      <h2>Our Collection</h2>
+      <table id="collection">
         <tr>
           <th>YEAR</th>
           <th>MAKE</th>
@@ -21,27 +21,26 @@
           <th>BODY STYLE</th>
           <th>ENGINE</th>
           <th>TRANSMISSION</th>
-          <th>DRIVE TRAIN</th>
+          <th>DRIVETRAIN</th>
           <th>VIN NUMBER</th>
           <th colspan="2"><a href="/addCar">Add a Car</a></th>
         </tr>
-    {{#autos}}
-        <tr>
-          <td>{{year}}</td>
-          <td>{{make}}</td>
-          <td>{{model}}</td>
-          <td>{{body.color}}</td>
-          <td>{{body.bodyStyle}}</td>
-          <td>{{driveTrain.engine}}</td>
-          <td>{{driveTrain.transmission}}</td>
-          <td>{{driveTrain.wheelDrive}}</td>
-          <td>{{vinNumber}}</td>
-          <td><a href="/updateCar/{{_id}}">Update</a></td>
-          <td><a href="/deleteCar/{{_id}}">Delete</a></td>
-        </tr>
-    {{/autos}}
-    </table>
-      
+        {{#autos}}
+          <tr>
+            <td>{{year}}</td>
+            <td>{{make}}</td>
+            <td>{{model}}</td>
+            <td>{{body.color}}</td>
+            <td>{{body.bodyStyle}}</td>
+            <td>{{driveTrain.engine}}</td>
+            <td>{{driveTrain.transmission}}</td>
+            <td>{{driveTrain.wheelDrive}}</td>
+            <td>{{vinNumber}}</td>
+            <td><a href="/updateCar/{{_id}}">Update</a></td>
+            <td><a href="/deleteCar/{{_id}}">Delete</a></td>
+          </tr>
+        {{/autos}}
+      </table>  
     </div>
   </body>
 </html>

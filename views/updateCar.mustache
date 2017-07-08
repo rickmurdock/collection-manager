@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title></title>
+    <title>Update a Car</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
@@ -12,87 +12,86 @@
     <h1>Clunker's Classic Cars</h1>
     <h2>Update a Car</h2>
     {{#auto}}
-    <div id="update">
-    <form action="/updateCar/{{_id}}" method="post">
-
-    <table id="update-table">
-      <tr>
-        <td>
-        <label for="year">Year</label><br>
-        <input type="text" name="year" id="year" value="{{year}}">
-        </td>
-        <td>
-          <label for="make">Make</label><br>
-          <input type="text" name="make" id="make" value="{{make}}">
-        </td>
-        <td>
-          <label for="model">Model</label><br>
-          <input type="text" name="model" id="model" value="{{model}}">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="vinNumber">VIN Number</label><br>
-          <input type="text" name="vinNumber" id="vinNumber" value="{{vinNumber}}">
-        </td>
-        <td>
-          <label for="body.color">Color</label><br>
-          <input type="text" name="body.color" id="body.color" value="{{body.color}}">
-        </td>
-        <td>
-          <label for="body.bodyStyle">Body Style</label><br>
-          <select name="body.bodyStyle" id="body.bodyStyle" >
-            <option value="{{body.bodyStyle}}" selected>{{body.bodyStyle}}</option>
-            <option value=""></option>
-            <option value="sedan">sedan</option>
-            <option value="coupe">coupe</option>
-            <option value="convertible">convertible</option>
-            <option value="wagon">wagon</option>
-            <option value="truck">truck</option>
-            <option value="coupe">van</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="driveTrain.engine">Engine</label><br>
-          <input type="text" name="driveTrain.engine" id="driveTrain.engine" value="{{driveTrain.engine}}">
-        </td>
-        <td>
-          <label for="driveTrain.transmission">Transmission</label><br>
-          <select name="driveTrain.transmission" id="driveTrain.transmission">
-            <option value="{{driveTrain.transmission}}" selected>{{driveTrain.transmission}}</option>
-            <option value=""></option>
-            <option value="automatic">automatic</option>
-            <option value="manual">manual</option>
-          </select>          
-        </td>
-        <td>
-          <label for="driveTrain.wheelDrive">Drive Type</label><br>
-          <select name="driveTrain.wheelDrive" id="driveTrain.wheelDrive">
-            <option value="{{driveTrain.wheelDrive}}" selected>{{driveTrain.wheelDrive}}</option>
-            <option value=""></option>
-            <option value="2WD">2WD</option>
-            <option value="4WD">4WD</option>
-            <option value="AWD">AWD</option>
-          </select>          
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <br>
-          <input type="submit" value="Update">
+      <div id="update">
+        <table id="update-table">
+          <form action="/updateCar/{{_id}}" method="post">
+            <tr>
+              <td>
+              <label for="year">Year</label><br>
+              <input type="text" name="year" id="year" value="{{year}}">
+              </td>
+              <td>
+                <label for="make">Make</label><br>
+                <input type="text" name="make" id="make" value="{{make}}" required>
+              </td>
+              <td>
+                <label for="model">Model</label><br>
+                <input type="text" name="model" id="model" value="{{model}}" required>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="vinNumber">VIN Number</label><br>
+                <input type="text" name="vinNumber" id="vinNumber" value="{{vinNumber}}">
+              </td>
+              <td>
+                <label for="body.color">Color</label><br>
+                <input type="text" name="body.color" id="body.color" value="{{body.color}}">
+              </td>
+              <td>
+                <label for="body.bodyStyle">Body Style</label><br>
+                <select name="body.bodyStyle" id="body.bodyStyle" >
+                  <option value="{{body.bodyStyle}}" selected>{{body.bodyStyle}}</option>
+                  <option value=""></option>
+                  <option value="sedan">sedan</option>
+                  <option value="coupe">coupe</option>
+                  <option value="convertible">convertible</option>
+                  <option value="wagon">wagon</option>
+                  <option value="truck">truck</option>
+                  <option value="coupe">van</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="driveTrain.engine">Engine</label><br>
+                <input type="text" name="driveTrain.engine" id="driveTrain.engine" value="{{driveTrain.engine}}">
+              </td>
+              <td>
+                <label for="driveTrain.transmission">Transmission</label><br>
+                <select name="driveTrain.transmission" id="driveTrain.transmission">
+                  <option value="{{driveTrain.transmission}}" selected>{{driveTrain.transmission}}</option>
+                  <option value=""></option>
+                  <option value="automatic">automatic</option>
+                  <option value="manual">manual</option>
+                </select>          
+              </td>
+              <td>
+                <label for="driveTrain.wheelDrive">Drivetrain</label><br>
+                <select name="driveTrain.wheelDrive" id="driveTrain.wheelDrive">
+                  <option value="{{driveTrain.wheelDrive}}" selected>{{driveTrain.wheelDrive}}</option>
+                  <option value=""></option>
+                  <option value="2WD">2WD</option>
+                  <option value="4WD">4WD</option>
+                  <option value="AWD">AWD</option>
+                </select>          
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <br>
+                <input type="submit" value="Update">
+              </td>
           </form>
-        </td>
-        <td>
-          <br>
           <form action="/" method="get">
-              <input type="submit" value="Cancel">
+              <td>
+                <br>
+                <input type="submit" value="Cancel">
+              </td>
+            </tr>
           </form>
-        </td>
-      </tr>
-    </table>
+        </table>
+      </div>
     {{/auto}}
-    </div>
   </body>
 </html>
